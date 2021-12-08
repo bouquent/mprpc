@@ -4,6 +4,7 @@
 #include "mprpcapplication.h"
 #include "mprpcchannel.h"
 #include "mprpccontroller.h"
+#include "logging.h"
 
 int main(int argc, char** argv) 
 {
@@ -17,15 +18,15 @@ int main(int argc, char** argv)
     stub.GetFriendList(&controller, &request, &response, nullptr);
 
     if (controller.Failed()) {
-        std::cout << "rpc service is expection!" << std::endl;
+        LOG_ERROR("rpc service is expection!");
     } else {
         if (0 == response.result().errcode()) {
-        for (int i = 0; i < response.friends_size(); ++i) {
-            std::cout << response.friends(i) << std::endl;
-        }
+            for (int i = 0; i < response.friends_size(); ++i) {
+                std::cout << response.friends(i) << std::endl;
+            }
         std::cout << std::endl;
         } else {
-            std::cout << "rpc getfriendlist response success" << response.result().errmsg() << std::endl;
+            LOG_ERROR("rpc getfriendlist response success:%s",response.result().errmsg().c_str());
         }
     }
     return 0;

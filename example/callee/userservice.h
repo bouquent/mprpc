@@ -1,12 +1,13 @@
 #include "user.pb.h"
 #include <string>
+#include "logging.h"
 
 class UserService : public fixbug::UserServiceRpc //rpc服务的提供者
 {
 public:
     bool Login(std::string name, std::string pwd) {
-        std::cout << "doing local service: Login" << std::endl;
-        std::cout << "name : " << name << " pwd :" << pwd << std::endl;
+        LOG_INFO("doing local service: Login");
+        LOG_INFO("name: %s,pwd: %s", name.c_str(), pwd.c_str());
         return true; 
     }
 

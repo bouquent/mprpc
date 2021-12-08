@@ -1,4 +1,5 @@
 #include "friend.pb.h"
+#include "logging.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -8,7 +9,7 @@ class FriendService : public fixbug::FriendListRpc
 public:
     std::vector<std::string> GetFriendList(uint32_t id)
     {
-        std::cout << "local GetFriendList" << std::endl;
+        LOG_INFO("doing local service: local GetFriendList");
         std::vector<std::string> vec;
         vec.push_back("czz");
         vec.push_back("llr");

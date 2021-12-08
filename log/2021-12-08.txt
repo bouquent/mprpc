@@ -1,0 +1,8 @@
+0012-00-35hello world0012-00-35hello world 110015-26-13hello world0015-26-13hello world 110015-28-30hello world
+0015-28-30hello world 11
+15:29:15hello world
+15:29:15hello world 11
+15:30:20hello world
+15:30:20hello world 11
+15:42:31doing local service: local GetFriendList
+15:42:35doing local service: local GetFriendList
